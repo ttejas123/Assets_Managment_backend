@@ -34,6 +34,11 @@
     next()
   }
 
+  app.get('/', (req, res) => {
+
+    res.status(200).json({"msg": "Welcome Buddy"})
+  })
+
   app.post('/read_all', async(req, res) => {
     try{
         // console.log(req.body)
