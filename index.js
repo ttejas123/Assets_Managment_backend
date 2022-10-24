@@ -12,7 +12,7 @@
   app.use(express.json());
   app.use(express.static('./'))
 
-  mongoose.connect("mongodb+srv://Tejasdb:eNGrSQ83u6rAjxaE@userdb.0jb7umc.mongodb.net/bagpack", { useNewUrlParser: true, useUnifiedTopology: true})
+  mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true})
   const db = mongoose.connection
 
   db.on('error', (error) => console.error("Error Occure ----> "+ error))
